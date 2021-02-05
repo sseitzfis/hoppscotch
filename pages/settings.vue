@@ -101,47 +101,25 @@
         <label>{{ $t("proxy") }}</label>
         <div class="row-wrapper">
           <span>
-            <pw-toggle :on="settings.PROXY_ENABLED" @change="toggleSetting('PROXY_ENABLED')">
+            <pw-toggle :on="true" @change="toggleSetting('PROXY_ENABLED')">
               {{ $t("proxy") }}
               {{ settings.PROXY_ENABLED ? $t("enabled") : $t("disabled") }}
             </pw-toggle>
           </span>
-          <a
-            href="https://github.com/hoppscotch/hoppscotch/wiki/Proxy"
-            target="_blank"
-            rel="noopener"
-          >
-            <button class="icon" v-tooltip="$t('wiki')">
-              <i class="material-icons">help_outline</i>
-            </button>
-          </a>
         </div>
-        <div class="row-wrapper">
+        <!--<div class="row-wrapper">
           <label for="url">{{ $t("url") }}</label>
           <button class="icon" @click="resetProxy" v-tooltip.bottom="$t('reset_default')">
             <i class="material-icons">clear_all</i>
           </button>
-        </div>
+        </div>-->
         <input
           id="url"
           type="url"
           v-model="settings.PROXY_URL"
-          :disabled="!settings.PROXY_ENABLED"
+          :disabled="true"
           :placeholder="$t('url')"
         />
-        <p class="info">
-          {{ $t("postwoman_official_proxy_hosting") }}
-          <br />
-          {{ $t("read_the") }}
-          <a
-            class="link"
-            href="https://apollosoftware.xyz/legal/postwoman"
-            target="_blank"
-            rel="noopener"
-          >
-            {{ $t("apollosw_privacy_policy") }} </a
-          >.
-        </p>
       </div>
       <!--
       PROXY SETTINGS URL AND KEY
@@ -204,10 +182,10 @@ export default {
             : true,
 
         FRAME_COLORS_ENABLED: this.$store.state.postwoman.settings.FRAME_COLORS_ENABLED || false,
-        PROXY_ENABLED: this.$store.state.postwoman.settings.PROXY_ENABLED || false,
+        PROXY_ENABLED: this.$store.state.postwoman.settings.PROXY_ENABLED || true,
         PROXY_URL:
           this.$store.state.postwoman.settings.PROXY_URL ||
-          "https://hoppscotch.apollosoftware.xyz/",
+          "http://172.30.2.129:9159",
         PROXY_KEY: this.$store.state.postwoman.settings.PROXY_KEY || "",
 
         EXTENSIONS_ENABLED:
@@ -258,7 +236,7 @@ export default {
       fb.writeSettings("syncEnvironments", true)
     },
     resetProxy({ target }) {
-      this.settings.PROXY_URL = `https://hoppscotch.apollosoftware.xyz/`
+      this.settings.PROXY_URL = `http://172.30.2.129:9159`
       target.innerHTML = this.doneButton
       this.$toast.info(this.$t("cleared"), {
         icon: "clear_all",
@@ -290,7 +268,7 @@ export default {
   },
   head() {
     return {
-      title: `Settings â€¢ Hoppscotch`,
+      title: `Settings • Hoppscotch`,
     }
   },
 }

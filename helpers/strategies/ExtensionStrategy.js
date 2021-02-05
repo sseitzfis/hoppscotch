@@ -20,7 +20,7 @@ const extensionWithProxy = async (req, { state }) => {
 
   const res = await window.__POSTWOMAN_EXTENSION_HOOK__.sendRequest({
     method: "post",
-    url: state.postwoman.settings.PROXY_URL || "https://hoppscotch.apollosoftware.xyz/",
+    url: state.postwoman.settings.PROXY_URL || "http://172.30.2.129:9159",
     data: {
       ...req,
       wantsBinary: true,
@@ -75,7 +75,7 @@ const extensionWithoutProxy = async (req, _store) => {
 }
 
 const extensionStrategy = (req, store) => {
-  if (store.state.postwoman.settings.PROXY_ENABLED) {
+  if (true || store.state.postwoman.settings.PROXY_ENABLED) {
     return extensionWithProxy(req, store)
   }
   return extensionWithoutProxy(req, store)

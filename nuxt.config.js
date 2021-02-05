@@ -181,8 +181,8 @@ export default {
   // Color Mode module configuration (https://github.com/nuxt-community/color-mode-module)
   colorMode: {
     classSuffix: "",
-    preference: "dark",
-    fallback: "dark",
+    preference: "system",
+    fallback: "light",
   },
 
   // i18n module configuration (https://github.com/nuxt-community/i18n-module)

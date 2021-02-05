@@ -4,9 +4,9 @@
       <div class="columns">
         <sidenav />
         <main class="container">
-          <pw-header />
+          <!--<pw-header />-->
           <nuxt />
-          <pw-footer />
+          <!--<pw-footer />-->
         </main>
       </div>
     </div>
@@ -16,7 +16,7 @@
 <script>
 export default {
   beforeMount() {
-    let color = localStorage.getItem("THEME_COLOR") || "green"
+    let color = localStorage.getItem("THEME_COLOR") || "teal"
     document.documentElement.setAttribute("data-accent", color)
   },
   async mounted() {

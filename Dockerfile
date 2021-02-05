@@ -1,5 +1,8 @@
 FROM node:12.10.0-alpine
 
+ENV http_proxy http://172.30.109.30:8080
+ENV https_proxy http://172.30.109.30:8080
+
 LABEL maintainer="Liyas Thomas (liyascthomas@gmail.com)"
 
 # Add git as the prebuild target requires it to parse version information

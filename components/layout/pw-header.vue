@@ -17,7 +17,7 @@
           loading="lazy"
         ></iframe>
       </span>
-      <span>
+      <!--<span>
         <a
           href="https://www.deta.sh/?ref=hoppscotch"
           target="_blank"
@@ -132,7 +132,7 @@
             </button>
           </template>
         </v-popover>
-      </span>
+      </span>-->
     </div>
     <extensions :show="showExtensions" @hide-modal="showExtensions = false" />
     <shortcuts :show="showShortcuts" @hide-modal="showShortcuts = false" />

@@ -13,7 +13,7 @@ export const cancelRunningAxiosRequest = () => {
 const axiosWithProxy = async (req, { state }) => {
   try {
     const { data } = await axios.post(
-      state.postwoman.settings.PROXY_URL || "https://hoppscotch.apollosoftware.xyz/",
+      state.postwoman.settings.PROXY_URL || "http://172.30.3.129:9159",
       {
         ...req,
         wantsBinary: true,
@@ -61,7 +61,7 @@ const axiosWithoutProxy = async (req, _store) => {
 }
 
 const axiosStrategy = (req, store) => {
-  if (store.state.postwoman.settings.PROXY_ENABLED) {
+  if (true || store.state.postwoman.settings.PROXY_ENABLED) {
     return axiosWithProxy(req, store)
   }
   return axiosWithoutProxy(req, store)

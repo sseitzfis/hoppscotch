@@ -1,4 +1,10 @@
 export default () => ({
+  postwoman: {
+    settings: {
+      PROXY_URL: "http://172.30.3.129:9159",
+      PROXY_ENABLED: true
+    }
+  },
   request: {
     name: "Untitled request",
     method: "GET",
