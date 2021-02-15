@@ -1818,10 +1818,10 @@ export default {
           break
         default:
           this.method = "GET"
-          this.url = "https://httpbin.org"
-          this.path = "/get"
+          this.url = "http://v-xee-tools01.fis-gmbh.de:12345"
+          this.path = "/apiuebung/einstieg"
           this.uri = this.url + this.path
-          this.name = "Untitled request"
+          this.name = "Einstieg Übung zur API-Designer-Schulung"
           this.bodyParams = []
           this.rawParams = "{}"
           this.files = []

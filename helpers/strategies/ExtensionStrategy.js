@@ -20,7 +20,7 @@ const extensionWithProxy = async (req, { state }) => {
 
   const res = await window.__POSTWOMAN_EXTENSION_HOOK__.sendRequest({
     method: "post",
-    url: state.postwoman.settings.PROXY_URL || "http://172.30.2.129:9159",
+    url: state.postwoman.settings.PROXY_URL || "http://172.30.3.129:9159",
     data: {
       ...req,
       wantsBinary: true,

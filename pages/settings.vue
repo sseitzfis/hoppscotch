@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <pw-section class="green" :label="$t('account')" ref="account" no-legend>
+    <!--<pw-section class="green" :label="$t('account')" ref="account" no-legend>
       <div class="flex flex-col">
         <label>{{ $t("account") }}</label>
         <div v-if="fb.currentUser">
@@ -48,7 +48,7 @@
           </p>
         </div>
       </div>
-    </pw-section>
+    </pw-section>-->
 
     <pw-section class="teal" :label="$t('theme')" ref="theme" no-legend>
       <div class="flex flex-col">
@@ -185,7 +185,7 @@ export default {
         PROXY_ENABLED: this.$store.state.postwoman.settings.PROXY_ENABLED || true,
         PROXY_URL:
           this.$store.state.postwoman.settings.PROXY_URL ||
-          "http://172.30.2.129:9159",
+          "http://172.30.3.129:9159",
         PROXY_KEY: this.$store.state.postwoman.settings.PROXY_KEY || "",
 
         EXTENSIONS_ENABLED:
@@ -236,7 +236,7 @@ export default {
       fb.writeSettings("syncEnvironments", true)
     },
     resetProxy({ target }) {
-      this.settings.PROXY_URL = `http://172.30.2.129:9159`
+      this.settings.PROXY_URL = `http://172.30.3.129:9159`
       target.innerHTML = this.doneButton
       this.$toast.info(this.$t("cleared"), {
         icon: "clear_all",
